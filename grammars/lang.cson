@@ -63,7 +63,7 @@ patterns: [
             name: 'variable.mc-lang'
           }
           {
-            match: '%(?!(\\d\\$)?([\\.-0])?\\d?[aAbBcCeEgGxXhHsStTodf])'
+            match: '(?<!%)%(?!(\\d\\$)?([\\.-0])?\\d?[aAbBcCeEgGxXhHsStTodf]|%)'
             name: 'invalid.illegal.mc-lang'
           }
         ]
