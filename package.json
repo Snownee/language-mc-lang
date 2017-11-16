@@ -1,14 +1,12 @@
 {
   "name": "language-mc-lang",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Atom language support for Minecraft language file",
-  "keywords": [
-  ],
+  "keywords": [],
   "repository": "https://github.com/Snownee/language-mc-lang",
   "license": "MIT",
   "engines": {
     "atom": "*"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
