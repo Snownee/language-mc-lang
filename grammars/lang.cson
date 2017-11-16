@@ -9,14 +9,14 @@ fileTypes: [ # An array of file extensions.
 ]
 patterns: [
   {
-    begin: '(^[ \\t]+)?(?=#)'
+    begin: '(^[ \\t]+)?(?=#|//)'
     beginCaptures:
       1:
         name: 'punctuation.whitespace.comment.leading.mc-lang'
     end: '(?!\\G)'
     patterns: [
       {
-        begin: '#'
+        begin: '#|//'
         beginCaptures:
           0:
             name: 'punctuation.definition.comment.mc-lang'
@@ -26,19 +26,19 @@ patterns: [
     ]
   }
   {
-    begin: '^\\s*(([\\S&&[^=\\\\]]|\\\\.)+)\\s*([:=])?'
+    begin: '^\\s*(([\\S&&[^=\\\\]]|\\\\.)+)\\s*(=)'
+    end: '\\n'
     beginCaptures:
       1:
         name: 'support.constant.mc-lang'
         patterns: [
           {
-            match: '\\\\([tnfr"\'\\\\ ]|u\\h{4})'
+            match: '\\\\([tnfr"\'\\\\]|u\\h{4})'
             name: 'constant.character.escape.mc-lang'
           }
         ]
       3:
         name: 'punctuation.separator.key-value.mc-lang'
-    end: '\\n'
     name: 'meta.key-pair.mc-lang'
     patterns: [
       {
@@ -51,8 +51,20 @@ patterns: [
             name: 'constant.character.escape.mc-lang'
           }
           {
-            match: '§[0-9a-fk-or]'
+            match: '[0-9a-fk-or]'
             name: 'constant.other.symbol.mc-lang'
+          }
+          {
+            match: '<[a-zA-Z0-9-]+>'
+            name: 'constant.other.symbol.mc-lang'
+          }
+          {
+            match: '%(\\d\\$)?([\\.-0])?\\d?[aAbBcCeEgGxXhHsStTodf]'
+            name: 'variable.mc-lang'
+          }
+          {
+            match: '%(?!(\\d\\$)?([\\.-0])?\\d?[aAbBcCeEgGxXhHsStTodf])'
+            name: 'invalid.illegal.mc-lang'
           }
         ]
       }
