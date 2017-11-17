@@ -51,7 +51,7 @@ patterns: [
             name: 'constant.character.escape.mc-lang'
           }
           {
-            match: '[0-9a-fk-or]'
+            match: '§[0-9a-fk-or]'
             name: 'constant.other.symbol.mc-lang'
           }
           {
@@ -59,11 +59,11 @@ patterns: [
             name: 'constant.other.symbol.mc-lang'
           }
           {
-            match: '%(\\d\\$)?([\\.-0])?\\d?[aAbBcCeEgGxXhHsStTodf]'
+            match: '%(\\d\\$)?([.+\\-0,(])*\\d?[aAbBcCeEgGxXhHsStTodfu]'
             name: 'variable.mc-lang'
           }
           {
-            match: '(?<!%)%(?!(\\d\\$)?([\\.-0])?\\d?[aAbBcCeEgGxXhHsStTodf]|%)'
+            match: '(?<!%)%(?!(\\d\\$)?([.+\\-0,(])*\\d?[aAbBcCeEgGxXhHsStTodfu]|%)'
             name: 'invalid.illegal.mc-lang'
           }
         ]
