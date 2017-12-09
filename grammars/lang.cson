@@ -26,7 +26,7 @@ patterns: [
     ]
   }
   {
-    begin: '^\\s*(([\\S&&[^=\\\\]]|\\\\.)+)\\s*(=)'
+    begin: '^([a-zA-Z0-9_:.-]+)\\s*(=)'
     end: '\\n'
     beginCaptures:
       1:
@@ -37,7 +37,7 @@ patterns: [
             name: 'constant.character.escape.mc-lang'
           }
         ]
-      3:
+      2:
         name: 'punctuation.separator.key-value.mc-lang'
     name: 'meta.key-pair.mc-lang'
     patterns: [
