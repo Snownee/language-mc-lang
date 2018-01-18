@@ -9,7 +9,7 @@ fileTypes: [ # An array of file extensions.
 ]
 patterns: [
   {
-    begin: '(^[ \\t]+)?(?=#|//)'
+    begin: '^([ \\t]+)?(?=#|//)'
     beginCaptures:
       1:
         name: 'punctuation.whitespace.comment.leading.mc-lang'
@@ -26,7 +26,7 @@ patterns: [
     ]
   }
   {
-    begin: '^([a-zA-Z0-9_:.\\\\-]+)\\s*(=)'
+    begin: '^([ #a-zA-Z0-9_:.\\\\-]+)\\s*(=)'
     end: '\\n'
     beginCaptures:
       1:
