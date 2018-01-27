@@ -47,7 +47,14 @@ patterns: [
         name: 'string.unquoted.mc-lang'
         patterns: [
           {
-            match: '\\\\([tnfr"\'\\\\]|u\\h{4})'
+            match: '''(?x)
+              \\\\                # a literal backslash
+              (                   # followed by
+                ["\\\\/bfnrt]     # one of these characters
+                |                 # or
+                u[0-9a-fA-F]{4}   # a u and four hex digits
+              )
+            '''
             name: 'constant.character.escape.mc-lang'
           }
           {
