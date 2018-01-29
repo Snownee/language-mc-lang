@@ -1,6 +1,6 @@
 {
   "name": "language-mc-lang",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Atom language support for Minecraft language file",
   "keywords": [],
   "repository": "https://github.com/Snownee/language-mc-lang",
